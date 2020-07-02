@@ -1,8 +1,11 @@
-FROM $com.sap.sles.base
+# Use an official Python 3.6 image as a parent image
+FROM python:3.6.4-slim-stretch
+# Install python library "tornado" (Only required with SAP Data Hub version >= 2.5)
+RUN pip install --user tornado==5.0.2
 
-RUN python3.6 -m pip install numpy --user
-RUN python3.6 -m pip install pandas==0.24.0 --user
-RUN pip3.6 install --user sklearn
-RUN pip3.6 install --user joblib
-RUN pip3.6 install --user matplotlib
-RUN pip3.6 install --user label_encoder
+RUN pip install numpy --user
+RUN pip install pandas==0.24.0 --user
+RUN pip install --user sklearn
+RUN pip install --user joblib
+RUN pip install --user matplotlib
+RUN pip install --user label_encoder
