@@ -9,6 +9,7 @@ ENV PATH="${PATH}:${HOME}/.local/bin"
 
 # Install python library "tornado" (Only required with SAP Data Hub version >= 2.5)
 RUN pip install --user tornado==5.0.2
+RUN pip install --user requests
 RUN pip install --user numpy
 RUN pip install --user pandas
 RUN pip install --user sklearn
