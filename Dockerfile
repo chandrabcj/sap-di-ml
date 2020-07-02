@@ -3,6 +3,12 @@ FROM python:3.6.4-slim-stretch
 # Install python library "tornado" (Only required with SAP Data Hub version >= 2.5)
 RUN pip install --user tornado==5.0.2
 
+RUN groupadd -g 1972 cmddata && useradd -g 1972 -u 1972 -m cmddata
+USER 1972:1972
+WORKDIR "/home/cmddata"
+ENV HOME=/home/cmddata
+ENV PATH="${PATH}:${HOME}/.local/bin"
+
 RUN pip install --user numpy
 RUN pip install --user pandas
 RUN pip install --user sklearn
