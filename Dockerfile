@@ -14,4 +14,5 @@ RUN pip install --user numpy
 RUN pip install --user pandas
 RUN pip install --user sklearn
 RUN pip install --user joblib
+RUN pip install --user boto3
 RUN pip install --user matplotlib
