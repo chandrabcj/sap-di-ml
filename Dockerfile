@@ -15,4 +15,8 @@ RUN pip install --user pandas
 RUN pip install --user sklearn
 RUN pip install --user joblib
 RUN pip install --user boto3
+RUN pip install --user unidecode
+RUN pip install --user nltk.tokenize
+RUN pip install --user nltk
+RUN pip install --user nltk.corpus
 RUN pip install --user matplotlib
